@@ -22,23 +22,14 @@
         }
         
         .searchDate{
-            margin-left: 450px;
+            margin-left: 150px;
         }
         
         .searchBox{
             border: 1px solid grey;
             border-radius: 2px;
             background-color: #fcfcfc;
-            width: auto;
-        }
-        
-        .recruiterArea{
-            margin-left: 400px;
-        }
-        
-        .recruiterOption{
-            width: 135px;
-            height: 25px;
+            width: 200px;
         }
         
         #submitBtn{
@@ -53,22 +44,10 @@
      <div class="headerCSS">
          <img src="https://lh3.googleusercontent.com/4uDjlPVjSID_i590xMHU-ZyK_DGY8rHxO7wexYJXTOQvSuR8I7_-n03KMVVQKXvBAAmgK5kmvnq53ikUEyQd6G_irLVZ5_Axxq9cKiLNKFYp6RmmeeE2EF6iUpe30Z86DtUrhJ5AzHetdP9Pa7vTAbngR70OuIZln9mc68ylpZtc0AvawW1B7HyXkIjrGZhdAl1XoPlIonVMGbhceZh6v7MogYbgf7nkiRjoOOwtJuwfMxy0mBdnkgFGos165Fcnl5iGF_aGaaLIVLmGHgIGNOqDoMotSCfCl33_t33HooJBqkVgwh_dCEl9G1r0xEaitkuWqEpeOAZyopoqaW8fSHpxJn9eNi5OWYk8iu3DRQkW-AYKAkdgRCPNo9LqubsKt3U7grk31uany7b0yuFNcVJRy4p3tnL7FGOE9RQxKEHSDUwUI29r-6jOx8NfXiD2Vv4r1VnMXJQqtMNgbI0hpVxMg9PJynRm6gy-n7Y_9Nrlwv_-W8mjF55MRFTDWqzVbOo6WzPZf1v8RDW75Mz4AzvLYyI2i__FY2NlXqb_jmbSSztpSBD03qUcsqhgQqiWA3IEE2-f0aBUewTiZ9Mh5SrNU0OfwgQZThn7s45_z7xwr--roI4iwqIUzQLbJzt1M-6vEZZX1XR42AUxogrfzBxxE2iiiZdxHXw=s128-no?.png" height="50" width="50">
          <div class="headerText">
-            <p>PSG Heat Map</p>
+            <p>PSG RCA Tree</p>
          </div>
          <div class="searchDate">
-             <label>Select Month: </label>
-             <form name="submitDateForm" action="" method="post">
-                 <input class="searchBox" type="month" name="getMonth" id="getMonthID">
-             </form>
-         </div>
-         <div class="recruiterArea">
-            <label>Select Recruiter: </label>
-            <form name="submitRecruiterForm" action="" method="post">
-                <select class="recruiterOption" name="recruiters">
-                    <option value="Recruiter 1">Recruiter 1</option>
-                    <option value="Recruiter 2">Recruiter 2</option>
-                </select>
-            </form>
+             <button name="Heat Map">Heat Map</button>
          </div>
       </div>
       <hr>
