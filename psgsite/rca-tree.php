@@ -22,7 +22,7 @@
         }
         
         .searchDate{
-            margin-left: 150px;
+            margin-left: 250px;
         }
         
         .searchBox{
@@ -30,6 +30,23 @@
             border-radius: 2px;
             background-color: #fcfcfc;
             width: 200px;
+        }
+        
+        .headerBtn{
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid #ffffff;
+            font-family: Century Gothic;
+            font-size: 14px;
+            height: 65px;
+            margin-right: 100px;
+            text-transform: uppercase;
+            width: 160px;
+        }
+        
+        .headerBtn:hover{
+            background-color: #ffd400;
+            cursor: pointer;
         }
         
         #submitBtn{
@@ -47,7 +64,9 @@
             <p>PSG RCA Tree</p>
          </div>
          <div class="searchDate">
-             <button name="Heat Map">Heat Map</button>
+             <button class="headerBtn" name="Reset">Reset Map</button>
+             <button class="headerBtn" name="Save">Save Map</button>
+             <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
          </div>
       </div>
       <hr>
