@@ -8,7 +8,7 @@
     <style>
         
         body{
-            background-color: rgba(255, 165, 0, 0.33);
+            background-color: rgb(255, 255, 255);
             border-color: transparent;
         }
         .headerCSS{
@@ -47,8 +47,8 @@
         }
         
         .container{
-           align-content: center;
-            width: 50%;
+            margin-left: 0;
+            width: 40%;
             height: 100%;
             border-color: transparent;
         }
@@ -75,6 +75,15 @@
             width: auto;
         }
         
+        .btn-orange{
+            background-color: orange;
+            color: white;
+        }
+        
+        .btn-default{
+            background-color: #d9edf7;
+        }
+        
     </style>
   </head>
   <body>
@@ -88,14 +97,13 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <p class="lead text-center bg-info btn text-info center-block">Test 1</p>
+          <p class="lead text-center bg-info btn text-info center-block">ROI</p>
           <div class="row">
             <div class="col-xs-6 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
             </div>
             <div class="col-xs-6 text-center">
-              <p class="btn">
-                <span class="glyphicon glyphicon-arrow-down"></span></p>
+              <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
             </div>
           </div>
 
@@ -103,15 +111,12 @@
       </div>
       <div class="row">
         <div class="col-xs-6 text-center">
-          <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
-          <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-
-          <p class="bg-success text-success btn">Okay! Proceed to step 2.</p>
+          <p class="center-block"><span class="btn btn-default btn-lg">Value of Starts</span></p>
         </div>
         <div class="col-xs-6 text-center">
-          <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
+          <p class="center-block"><span class="btn btn-default btn-lg">No</span></p>
           <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-          <p class="bg-info text-info btn">Test</p>
+          <p class="bg-info text-info btn">This is a placeholder for actual text.</p>
           <div class="row">
             <div class="col-xs-6 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
@@ -123,18 +128,26 @@
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
+              <p class="center-block"><span class="btn btn-default btn-lg">Yes</span></p>
               <p class="btn">
                 <span class="glyphicon glyphicon-arrow-down"></span></p><br/>
-              <p class="bg-success text-success btn text-wrap">Test</p>
+              <p class="bg-success text-success btn text-wrap btn-default">Test</p>
 
             </div>
             <div class="col-xs-6 text-center">
-              <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
+              <p class="center-block"><span class="btn btn-default btn-lg">No</span></p>
               <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-              <p class="btn bg-danger text-danger text-wrap">Test</p>
+              <p class="btn bg-danger text-danger text-wrap btn-default">Test</p>
             </div>
           </div>
+            <div class="row">
+                <div class="col-xs-6 text-center">
+                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                </div>
+                <div class="col-xs-6 text-center">
+                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                </div>
+            </div>
         </div>
       </div>
     </div>
