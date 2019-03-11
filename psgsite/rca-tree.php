@@ -3,6 +3,18 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script>
+          function changeColor(btn){
+              if(btn.style.backgroundColor != 'rgb(92, 184, 92)'){
+                  btn.style.backgroundColor = 'rgb(92, 184, 92)'; //green
+              } else{
+                  btn.style.backgroundColor = 'rgb(217, 83, 79)'; //red
+              }
+              
+          }
+          
+          
+      </script>
   <head>
     <base target="_top">
     <style>
@@ -85,6 +97,7 @@
         }
         
     </style>
+      
   </head>
   <body>
       
@@ -114,9 +127,15 @@
           <p class="center-block"><span class="btn btn-default btn-lg">Value of Starts</span></p>
         </div>
         <div class="col-xs-6 text-center">
-          <p class="center-block"><span class="btn btn-default btn-lg">No</span></p>
+          <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" onclick="changeColor(this)">Number of Starts</span></p>
+        <div class="col-xs-6 text-center">
           <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-          <p class="bg-info text-info btn">This is a placeholder for actual text.</p>
+          <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
+            </div>
+             <div class="col-xs-6 text-center">
+          <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+          <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
+            </div>
           <div class="row">
             <div class="col-xs-6 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
