@@ -7,25 +7,36 @@
     <base target="_top">
     <style>
         
+        body{
+            background-color: rgba(255, 165, 0, 0.33);
+            border-color: transparent;
+        }
         .headerCSS{
             font-family: Century Gothic;
             display: flex;
             align-items: center;
+            text-align: center;
+            width: 300px;
         }
         
         .headerCSS img{
             flex-grow: 0px;
             flex-shrink: 0px;
+            margin-left: 10px;
         }
         
-        .headerText{
+        .headerText p{
             margin-left: 15px;
             font-family: Century Gothic;
             font-size: 20px;
+            margin-top: 25px;
         }
         
         .searchDate{
-            margin-left: 250px;
+            position: fixed;
+            margin-left: 20px;
+            bottom: 10px;
+            width: 100%;
         }
         
         .searchBox{
@@ -35,14 +46,21 @@
             width: 200px;
         }
         
+        .container{
+           align-content: center;
+            width: 50%;
+            height: 100%;
+            border-color: transparent;
+        }
+        
         .headerBtn{
-            background-color: transparent;
+            background-color: orange;
             border-radius: 5px;
-            border: 1px solid #ffffff;
+            border: 1px solid transparent;
             font-family: Century Gothic;
             font-size: 14px;
             height: 65px;
-            margin-right: 100px;
+            margin-right: 10px;
             text-transform: uppercase;
             width: 160px;
         }
@@ -93,7 +111,7 @@
         <div class="col-xs-6 text-center">
           <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
           <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-          <p class="bg-info text-info btn">Are you willing to put the data into the system?</p>
+          <p class="bg-info text-info btn">Test</p>
           <div class="row">
             <div class="col-xs-6 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
@@ -107,14 +125,14 @@
             <div class="col-xs-6">
               <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
               <p class="btn">
-                <span class="glyphicon glyphicon-arrow-down"></span></p>
-              <p class="bg-success text-success btn text-wrap">Okay! After the data is in the system, proceed to step 2.</p>
+                <span class="glyphicon glyphicon-arrow-down"></span></p><br/>
+              <p class="bg-success text-success btn text-wrap">Test</p>
 
             </div>
             <div class="col-xs-6 text-center">
               <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
               <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-              <p class="btn bg-danger text-danger text-wrap">The data must be in the system to use this service.</p>
+              <p class="btn bg-danger text-danger text-wrap">Test</p>
             </div>
           </div>
         </div>
@@ -125,8 +143,6 @@
              <button class="headerBtn" name="Save">Save Map</button>
              <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
          </div>
-      <hr>
-      
   </body>
     
 </html>
