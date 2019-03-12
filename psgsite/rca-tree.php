@@ -184,16 +184,16 @@
                             <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
                             <p class="center-block"><span class="btn btn-default btn-lg">Number of Connects</span></p>
                             <div class="row">    
-                                <div class="col-lg-3" style="right: 50px;">
+                                <div class="col-lg-3" style="right: 60px;">
                                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:30px;"></span></p>
                                     <p class="center-block"><span class="btn btn-default btn-lg">Connect Rate</span></p>
                                 </div>
-                                <div class="col-lg-7" style="left: 70px;">
+                                <div class="col-lg-7" style="left: 40px;">
                                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:20px;"></span></p>
                                     <p class="center-block"><span class="btn btn-default btn-lg">Number of Dials</span></p>
                                     <div class="row">
                                     <div class="col-lg-1" style="right: 70px;">
-                                        <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
+                                        <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 40px;"></span></p>
                                         <p class="center-block"><span class="btn btn-default btn-lg">Insufficient Dial Effort</span></p>
                                     </div>
                                     <div class="col-lg-1" style="left:30px;">
