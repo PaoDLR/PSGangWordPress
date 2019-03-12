@@ -59,10 +59,11 @@
         }
         
         .container{
-            margin-left: 0;
-            width: 40%;
+            width: 90%;
             height: 100%;
             border-color: transparent;
+			align-content: center;
+			
         }
         
         .headerBtn{
@@ -95,10 +96,11 @@
         .btn-default{
             background-color: #d9edf7;
         }
-		
-		.btn-default{
-			margin-right: 0px;
-		}
+        
+        .btn{
+            white-space: normal;
+        }
+        
         
     </style>
       
@@ -111,73 +113,109 @@
             <p>PSG RCA Tree</p><br/>
          </div>
      </div>
-    <div class="container">
+    <div class="container overflow-auto">
       <div class="row">
-        <div class="col-xs-12">
-          <p class="lead text-center bg-info btn text-info center-block">ROI</p>
+        <div class="col-lg-12">
+          <p class="lead text-center bg-info panel-primary text-info center-block">ROI</p>
           <div class="row">
-            <div class="col-xs-6 text-center">
+            <div class="col-lg-2 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
             </div>
-            <div class="col-xs-6 text-center">
+            <div class="col-lg-10 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
             </div>
           </div>
 
         </div>
       </div>
+        
       <div class="row">
-        <div class="col-xs-6 text-center">
+        <div class="col-lg-2 text-center">
           <p class="center-block"><span class="btn btn-default btn-lg" onclick="changeColor(this)">Value of Starts</span></p>
         </div>
-        <div class="col-xs-6 text-center">
+        <div class="col-lg-10 text-center">
           <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" onclick="changeColor(this)">Number of Starts</span></p>
-        <div class="col-xs-6 text-center">
-          <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-          <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
-            </div>
-             <div class="col-xs-6 text-center">
-          <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-          <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
-            </div>
           <div class="row">
-            <div class="col-xs-6 text-center">
-              <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
+             <div class="col-lg-4" style="left: 250px;">
+                <p class="btn center-block" ><span class="glyphicon glyphicon-arrow-down"></span></p>
+                <p class="center-block"><span class="btn btn-default btn-lg">Submit to Start Ratio</span></p>
+                <div class="row">
+                  <div class="col-lg-1" style="left: 10px;">
+                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Interview Show to Start Ratio</span></p>
+                  </div>
+                  <div class="col-lg-8" style="left: 35px;">
+                    <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Job Opening Ratio</span></p>
+                  </div>
+                  <div class="col-lg-2" style="right: 35px;">
+                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:25px;"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Submit to Interview Ratio</span></p>
+                  </div>
+               </div>
             </div>
-            <div class="col-xs-6 text-center">
-              <p class="btn">
-                <span class="glyphicon glyphicon-arrow-down"></span></p>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-xs-6">
-              <p class="center-block"><span class="btn btn-default btn-lg">Submit to Start Ratio</span></p>
-            </div>
-            <div class="col-xs-6">
-              <p class="center-block"><span class="btn btn-default btn-lg">Number of Submits</span></p>
-            </div>
-          </div>
-            <div class="row">
-                <div class="col-xs-3">
-                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
-				  <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
+            <div class="col-lg-4" style="left: 250px;">
+                    <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Submits</span></p>
+                <div class="row">
+                <div class="col-lg-5" style="left: 40px;">
+                    <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Submit Rate</span></p>
+                </div> 
+                <div class="col-lg-7" style="left: 30px;">
+                    <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Snapshots</span></p>
+                    <div class="row">
+                        <div class="col-lg-6" style="right: 40px;">
+                            <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                            <p class="center-block"><span class="btn btn-default btn-lg">Conversion Rate</span></p>
+                             <div class="row">
+                                <div class="col-lg-4" style="right: 40px;">
+                                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 20px;"></span></p>
+                                    <p class="center-block"><span class="btn btn-default btn-lg">Call Quality</span></p>
+                                </div>
+                                <div class="col-lg-4" style="left: 10px;">
+                                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 20px;"></span></p>
+                                    <p class="center-block"><span class="btn btn-default btn-lg">Lead Quality</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6" style="left: 50px;">
+                            <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+                            <p class="center-block"><span class="btn btn-default btn-lg">Number of Connects</span></p>
+                            <div class="row">    
+                                <div class="col-lg-3" style="right: 50px;">
+                                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:30px;"></span></p>
+                                    <p class="center-block"><span class="btn btn-default btn-lg">Connect Rate</span></p>
+                                </div>
+                                <div class="col-lg-7" style="left: 70px;">
+                                    <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:20px;"></span></p>
+                                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Dials</span></p>
+                                    <div class="row">
+                                    <div class="col-lg-1" style="right: 70px;">
+                                        <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
+                                        <p class="center-block"><span class="btn btn-default btn-lg">Insufficient Dial Effort</span></p>
+                                    </div>
+                                    <div class="col-lg-1" style="left:30px;">
+                                        <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:30px;"></span></p>
+                                        <p class="center-block"><span class="btn btn-default btn-lg">Number of Callable Leads</span></p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-3">
-                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
-				  <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
-                </div>
-				<div class="col-xs-3">
-                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
-				  <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
-                </div>
-                <div class="col-xs-3">
-                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
-				  <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
-                </div>
             </div>
+            </div>
+         </div>
         </div>
       </div>
-    </div>
+        
+      
+            
+                
+           </div>    
          <div class="searchDate">
              <button class="headerBtn" name="Reset">Reset Map</button>
              <button class="headerBtn" name="Save">Save Map</button>
