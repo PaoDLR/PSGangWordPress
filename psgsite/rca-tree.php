@@ -121,7 +121,7 @@
             <div class="col-lg-2 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span>
             </div>
-            <div class="col-lg-10 text-center">
+            <div class="col-lg-9 text-center">
               <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
             </div>
           </div>
@@ -133,14 +133,14 @@
         <div class="col-lg-2 text-center">
           <p class="center-block"><span class="btn btn-default btn-lg" onclick="changeColor(this)">Value of Starts</span></p>
         </div>
-        <div class="col-lg-10 text-center">
+        <div class="col-lg-9 text-center">
           <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" onclick="changeColor(this)">Number of Starts</span></p>
           <div class="row">
-             <div class="col-lg-4" style="left: 250px;">
+             <div class="col-lg-4" style="left: 200px;">
                 <p class="btn center-block" ><span class="glyphicon glyphicon-arrow-down"></span></p>
                 <p class="center-block"><span class="btn btn-default btn-lg">Submit to Start Ratio</span></p>
                 <div class="row">
-                  <div class="col-lg-1" style="left: 10px;">
+                  <div class="col-lg-1" style="right: 10px;">
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
                     <p class="center-block"><span class="btn btn-default btn-lg">Interview Show to Start Ratio</span></p>
                   </div>
@@ -148,7 +148,7 @@
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
                     <p class="center-block"><span class="btn btn-default btn-lg">Job Opening Ratio</span></p>
                   </div>
-                  <div class="col-lg-2" style="right: 35px;">
+                  <div class="col-lg-2" style="right: 20px;">
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:25px;"></span></p>
                     <p class="center-block"><span class="btn btn-default btn-lg">Submit to Interview Ratio</span></p>
                   </div>
