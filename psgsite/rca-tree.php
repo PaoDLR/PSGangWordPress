@@ -95,6 +95,10 @@
         .btn-default{
             background-color: #d9edf7;
         }
+		
+		.btn-default{
+			margin-right: 0px;
+		}
         
     </style>
       
@@ -124,7 +128,7 @@
       </div>
       <div class="row">
         <div class="col-xs-6 text-center">
-          <p class="center-block"><span class="btn btn-default btn-lg">Value of Starts</span></p>
+          <p class="center-block"><span class="btn btn-default btn-lg" onclick="changeColor(this)">Value of Starts</span></p>
         </div>
         <div class="col-xs-6 text-center">
           <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" onclick="changeColor(this)">Number of Starts</span></p>
@@ -147,24 +151,28 @@
           </div>
           <div class="row">
             <div class="col-xs-6">
-              <p class="center-block"><span class="btn btn-default btn-lg">Yes</span></p>
-              <p class="btn">
-                <span class="glyphicon glyphicon-arrow-down"></span></p><br/>
-              <p class="bg-success text-success btn text-wrap btn-default">Test</p>
-
+              <p class="center-block"><span class="btn btn-default btn-lg">Submit to Start Ratio</span></p>
             </div>
-            <div class="col-xs-6 text-center">
-              <p class="center-block"><span class="btn btn-default btn-lg">No</span></p>
-              <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-              <p class="btn bg-danger text-danger text-wrap btn-default">Test</p>
+            <div class="col-xs-6">
+              <p class="center-block"><span class="btn btn-default btn-lg">Number of Submits</span></p>
             </div>
           </div>
             <div class="row">
-                <div class="col-xs-6 text-center">
+                <div class="col-xs-3">
                   <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+				  <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
                 </div>
-                <div class="col-xs-6 text-center">
+                <div class="col-xs-3">
                   <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+				  <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
+                </div>
+				<div class="col-xs-3">
+                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+				  <p class="center-block"><span class="btn btn-success btn-lg">Yes</span></p>
+                </div>
+                <div class="col-xs-3">
+                  <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
+				  <p class="center-block"><span class="btn btn-danger btn-lg">No</span></p>
                 </div>
             </div>
         </div>
@@ -178,8 +186,3 @@
   </body>
     
 </html>
-
-
-
-
-
