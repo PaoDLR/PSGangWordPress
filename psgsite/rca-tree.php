@@ -5,113 +5,337 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script>
+        var values;
+        var currentNode;
+        var valStartsSub0 = 0; var valStartsSub1 = 0; var valStartsSub2 = 0;
+        var showStartRatioSub0 = 0; var showStartRatioSub1 = 0; var showStartRatioSub2 = 0; var showStartRatioSub3 = 0; var showStartRatioSub4 = 0; var showStartRatioSub5 = 0; var showStartRatioSub6 = 0; var showStartRatioSub7 = 0;
+        var jobRatioSub0 = 0; var jobRatioSub1 = 0; var jobRatioSub2 = 0;
+        var interviewRatioSub0 = 0; var interviewRatioSub1 = 0; var interviewRatioSub2 = 0; var interviewRatioSub3 = 0; var interviewRatioSub4 = 0; var interviewRatioSub5 = 0; var interviewRatioSub6 = 0; var interviewRatioSub7 = 0; var interviewRatioSub8 = 0; var interviewRatioSub9 = 0;
+        var submitRateSub0 = 0; var submitRateSub1 = 0; var submitRateSub2 = 0;
+        var callQuality0 = 0; var callQuality1 = 0; var callQuality2 = 0;
+        var leadQualitySub0 = 0; var leadQualitySub1 = 0; var leadQualitySub2 = 0; var leadQualitySub3 = 0;
+        var connectRateSub0 = 0; var connectRateSub1 = 0; var connectRateSub2 = 0; var connectRateSub3 = 0; var connectRateSub4 = 0; var connectRateSub5 = 0;
+        var dialEffortSub0 = 0; var dialEffortSub1 = 0;
+        var numLeadsSub0 = 0; var numLeadsSub1 = 0; var numLeadsSub2 = 0; var numLeadsSub3 = 0; var numLeadsSub4 = 0; var numLeadsSub5 = 0; var numLeadsSub6 = 0; var numLeadsSub7 = 0;
         
-        
-          function changeColor(btn){
-              if(btn.style.backgroundColor != 'rgb(92, 184, 92)'){
-                  btn.style.backgroundColor = 'rgb(92, 184, 92)'; //green
-              } else{
-                  btn.style.backgroundColor = 'rgb(217, 83, 79)'; //red
-              }
-              
-          }
         
           function openModal(btn){
               var body = document.getElementById("message");
               var elemId = btn.id;
               var numSubNodes = 0;
               var subNodes =[];
+              var subNodeValues = [];
               var header = document.getElementsByClassName("modal-title")[0];
+              //save current node 
+              currentNode = btn.id;
+              
               header.innerHTML = btn.innerHTML;
               
               switch(elemId){
                   case 'valStarts': numSubNodes = 3;
                       subNodes.push('GP of requisitions is too low');
+                      subNodeValues.push(valStartsSub0);
+                      
                       subNodes.push('GP of requisitions not aligned with how goals were baselined');
+                      subNodeValues.push(valStartsSub1);
+                      
                       subNodes.push('Recruiters are prioritizing low GP requisitions');
+                      subNodeValues.push(valStartsSub2);
+                      alert(subNodeValues[0]);
                       break;
                   case 'showStartRatio': numSubNodes = 8;
                       subNodes.push('Interview prep is poor');
+                      subNodeValues.push(showStartRatioSub0);
+                      
                       subNodes.push('Poor candidate qualifications');
+                      subNodeValues.push(showStartRatioSub1);
+                      
                       subNodes.push('Offer Accepts rate is too low');
+                      subNodeValues.push(showStartRatioSub2);
+                      
                       subNodes.push('Unfavorable client - end client equation(e.g., VMS Status)');
+                      subNodeValues.push(showStartRatioSub3);
+                      
                       subNodes.push('Candidate onboarding issues');
+                      subNodeValues.push(showStartRatioSub4);
+                      
                       subNodes.push('Too much time passed between interview and Start');
+                      subNodeValues.push(showStartRatioSub5);
+                      
                       subNodes.push('Missing track record with End Client');
+                      subNodeValues.push(showStartRatioSub6);
+                      
                       subNodes.push('Missing data');
+                      subNodeValues.push(showStartRatioSub7);
+                      
                       break;
                   case 'jobRatio' : numSubNodes = 3;
                       subNodes.push('Client does not have enough jobs for current team size');
+                      subNodeValues.push(jobRatioSub0);
+                      
                       subNodes.push('Workable Jobs ratio per recruiter too low');
+                      subNodeValues.push(jobRatioSub1);
+                      
                       subNodes.push('Drop in Jobs is temporary (only this month)');
+                      subNodeValues.push(jobRatioSub2);
+                      
                       break;
                   case 'interviewRatio': numSubNodes = 10;
                       subNodes.push('Poor candidate qualifications');
+                      subNodeValues.push(interviewRatioSub0);
+                      
                       subNodes.push('Candidate Show rate is too low');
+                      subNodeValues.push(interviewRatioSub1);
+                      
                       subNodes.push('Unfavorable client - end client equation(e.g., VMS Status)');
+                      subNodeValues.push(interviewRatioSub2);
+                      
                       subNodes.push('Time to Submit is too long');
+                      subNodeValues.push(interviewRatioSub3);
+                      
                       subNodes.push('Candidate pay rate mismatch with job');
+                      subNodeValues.push(interviewRatioSub4);
+                      
                       subNodes.push('Submit to Job Opening ratio is too high');
+                      subNodeValues.push(interviewRatioSub5);
+                      
                       subNodes.push('Too much time passed between Submit and Interview invite');
+                      subNodeValues.push(interviewRatioSub6);
+                      
                       subNodes.push('Jobs are too old');
+                      subNodeValues.push(interviewRatioSub7);
+                      
                       subNodes.push('Missing data');
+                      subNodeValues.push(interviewRatioSub8);
+                      
                       subNodes.push('Too Many Cross Submits');
+                      subNodeValues.push(interviewRatioSub9);
+                      
                       break;
                   case 'submitRate': numSubNodes = 3;
                       subNodes.push('Snapshot quality is too low');
+                      subNodeValues.push(submitRateSub0);
+                      
                       subNodes.push('TBD rate is too high');
+                      subNodeValues.push(submitRateSub1);
+                      
                       subNodes.push('Time to generate Snapshots is too long');
+                      subNodeValues.push(submitRateSub2);
+                      
                       break;
                   case 'callQuality': numSubNodes = 3;
                       subNodes.push('Recruiter does not follow script');
+                      subNodeValues.push(callQuality0);
+                      
                       subNodes.push('Did not act with urgency to close');
+                      subNodeValues.push(callQuality1);
+                      
                       subNodes.push('Script is insufficient');
+                      subNodeValues.push(callQuality2);
+                      
                       break;
                   case 'leadQuality': numSubNodes = 4;
                       subNodes.push('Resume is a skill mismatch');
+                      subNodeValues.push(leadQualitySub0);
+                      
                       subNodes.push('Resume is a compensation mismatch based on obvious experience cues');
+                      subNodeValues.push(leadQualitySub1);
+                      
                       subNodes.push('Resume is a location mismatch');
+                      subNodeValues.push(leadQualitySub2);
+                      
                       subNodes.push('Resume is an obvious mismatch for job type');
+                      subNodeValues.push(leadQualitySub3);
+                      
                       break;
                   case 'connectRate': numSubNodes = 6;
                       subNodes.push('Quality of voicemail is poor');
+                      subNodeValues.push(connectRateSub0);
+                      
                       subNodes.push('Time of calls is wrong');
+                      subNodeValues.push(connectRateSub1);
+                      
                       subNodes.push('Number of times a lead is dialed is too low');
+                      subNodeValues.push(connectRateSub2);
+                      
                       subNodes.push('Calling from a different area code than candidate');
+                      subNodeValues.push(connectRateSub3);
+                      
                       subNodes.push('Are we failing to execute ETC?');
+                      subNodeValues.push(connectRateSub4);
+                      
                       subNodes.push('Is the % of new leads (vs pipeline) too low?');
+                      subNodeValues.push(connectRateSub5);
+                      
                       break;
                   case 'dialEffort': numSubNodes = 2;
                       subNodes.push('Call time in Planner is too short');
+                      subNodeValues.push(dialEffortSub0);
+                      
                       subNodes.push('Poor planner execution (productivity issue?)');
+                      subNodeValues.push(dialEffortSub1);
+                      
                       break;
                   case 'numLeads': numSubNodes = 8;
                       subNodes.push('Wrong sourcing channels');
+                      subNodeValues.push(numLeadsSub0);
+                      
                       subNodes.push('Wrong search strings');
+                      subNodeValues.push(numLeadsSub1);
+                      
                       subNodes.push('Tough jobs / not enough jobs');
+                      subNodeValues.push(numLeadsSub2);
+                      
                       subNodes.push('Not enough time to source');
+                      subNodeValues.push(numLeadsSub3);
+                      
                       subNodes.push('Low/slow sourcing effort');
+                      subNodeValues.push(numLeadsSub4);
+                      
                       subNodes.push('Overscreening leads');
+                      subNodeValues.push(numLeadsSub5);
+                      
                       subNodes.push('Bad pipeline strategy');
+                      subNodeValues.push(numLeadsSub6);
+                      
                       subNodes.push('Bad referral strategy');
+                      subNodeValues.push(numLeadsSub7);
+                      
                       break;
                   default: numSubNodes = 0;
               }
               
               var docBody = '';
               
+              docBody += '<table>';
               for(var i=0; i< numSubNodes; i++){
+                  docBody += "<tr><td>";
                   docBody += "<p class='lead text-center bg-info panel-primary text-info center-block'>";
-                  docBody += subNodes[i]; //supposed to be the node body
-                  docBody += "<center><select>";
-                  docBody += "<option value='0'>Not a Concern</option>";
-                  docBody += "<option value='1'>Challenge</option>";
-                  docBody += "<option value='2'>Not Assessed</option>";
-                  docBody += "</select></center>";
-                  docBody += "</p><br/>";
+                  docBody += subNodes[i];
+                  docBody += "</p>";
+                  docBody += "</td><td><select id='choices" + i + "'>";
+                  docBody += "<option value='0'";
+                  if(subNodeValues[i] == 0){
+                     docBody += " selected='selected'>Not Assessed</option>";   
+                  } else {
+                     docBody += ">Not Assessed</option>";    
+                  }
+                  docBody += "<option value='1'"
+                  if(subNodeValues[i] == 1){
+                     docBody += " selected='selected'>Not a Concern</option>";   
+                  } else {
+                     docBody += ">Not a Concern</option>";    
+                  }
+                  docBody += "<option value='2'";
+                  if(subNodeValues[i] == 2){
+                     docBody += " selected='selected'>Challenge</option>";   
+                  } else {
+                     docBody += ">Challenge</option>";    
+                  }
+                  docBody += "</select></td>";
+                  docBody += "</tr>";
               }
+              docBody += '</table>';
+                                      
               body.innerHTML = docBody;
               
+              
+          }
+        
+          function saveChoices(){
+              switch(currentNode){
+                  case 'valStarts':
+                      valStartsSub0 = document.getElementById("choices0").value;
+                      valStartsSub1 = document.getElementById("choices1").value;
+                      valStartsSub2 = document.getElementById("choices2").value;
+                      alert(valStartsSub0 + " " + valStartsSub1 + " " + valStartsSub2);
+                      break;
+                      
+                  case 'showStartRatio':
+                      showStartRatioSub0 = document.getElementById("choices0").value;
+                      showStartRatioSub1 = document.getElementById("choices1").value;
+                      showStartRatioSub2 = document.getElementById("choices2").value;
+                      showStartRatioSub3 = document.getElementById("choices3").value;
+                      showStartRatioSub4 = document.getElementById("choices4").value;
+                      showStartRatioSub5 = document.getElementById("choices5").value;
+                      showStartRatioSub6 = document.getElementById("choices6").value;
+                      showStartRatioSub7 =  document.getElementById("choices7").value;
+                      alert(showStartRatioSub0);
+                      break;
+                      
+                  case 'jobRatio' :
+                      jobRatioSub0 = document.getElementById("choices0").value;
+                      jobRatioSub1 = document.getElementById("choices1").value;
+                      jobRatioSub2 = document.getElementById("choices2").value;
+                      alert(jobRatioSub0);
+                      break;
+                      
+                  case 'interviewRatio':
+                      interviewRatioSub0 = document.getElementById("choices0").value;
+                      interviewRatioSub1 = document.getElementById("choices1").value;
+                      interviewRatioSub2 = document.getElementById("choices2").value;
+                      interviewRatioSub3 = document.getElementById("choices3").value;
+                      interviewRatioSub4 = document.getElementById("choices4").value;
+                      interviewRatioSub5 = document.getElementById("choices5").value;
+                      interviewRatioSub6 = document.getElementById("choices6").value;
+                      interviewRatioSub7 = document.getElementById("choices7").value;
+                      interviewRatioSub8 = document.getElementById("choices8").value;
+                      interviewRatioSub9 = document.getElementById("choices9").value;
+                      alert(interviewRatioSub0);
+                      break;
+                      
+                  case 'submitRate':
+                      submitRateSub0 = document.getElementById("choices0").value;
+                      submitRateSub1 = document.getElementById("choices1").value;
+                      submitRateSub2 = document.getElementById("choices2").value;
+                      alert(submitRateSub0);
+                      break;
+                      
+                  case 'callQuality': 
+                      callQuality0 = document.getElementById("choices0").value;
+                      callQuality1 = document.getElementById("choices1").value;
+                      callQuality2 = document.getElementById("choices2").value;
+                      alert(callQuality0);
+                      break;
+                      
+                  case 'leadQuality':
+                      leadQualitySub0 = document.getElementById("choices0").value;
+                      leadQualitySub1 = document.getElementById("choices1").value;
+                      leadQualitySub2 = document.getElementById("choices2").value;
+                      leadQualitySub3 = document.getElementById("choices3").value;
+                      alert(leadQualitySub0);
+                      break;
+                      
+                  case 'connectRate':
+                      connectRateSub0 = document.getElementById("choices0").value;
+                      connectRateSub1 = document.getElementById("choices1").value;
+                      connectRateSub2 = document.getElementById("choices2").value;
+                      connectRateSub3 = document.getElementById("choices3").value;
+                      connectRateSub4 = document.getElementById("choices4").value;
+                      connectRateSub5 = document.getElementById("choices5").value;
+                      alert(connectRateSub0);
+                      break;
+                      
+                  case 'dialEffort':
+                      dialEffortSub0 = document.getElementById("choices0").value;
+                      dialEffortSub1 = document.getElementById("choices1").value;
+                      alert(dialEffortSub0);
+                      break;
+                      
+                  case 'numLeads':
+                      numLeadsSub0 = document.getElementById("choices0").value;
+                      numLeadsSub1 = document.getElementById("choices1").value;
+                      numLeadsSub2 = document.getElementById("choices2").value;
+                      numLeadsSub3 = document.getElementById("choices3").value;
+                      numLeadsSub4 = document.getElementById("choices4").value;
+                      numLeadsSub5 = document.getElementById("choices5").value;
+                      numLeadsSub6 = document.getElementById("choices6").value;
+                      numLeadsSub7 = document.getElementById("choices7").value;
+                      alert(numLeadsSub0);
+                      break;
+                      
+                  default: numSubNodes = 0;
+                }
           }
         
 //        $(document).ready(function(){
@@ -172,7 +396,7 @@
             height: 100%;
             border-color: transparent;
 			align-content: center;
-			
+			overflow: auto;
         }
         
         .headerBtn{
@@ -212,6 +436,12 @@
         
         option:hover, select:hover{
             cursor: pointer;
+        }
+        
+        td{
+            background-color: #d9edf7;
+            padding-right: 20px;
+            padding-top: 10px;
         }
         
     </style>
@@ -342,7 +572,7 @@
             <p id="message">Some text in the modal.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="saveChoices()">Close</button>
           </div>
         </div>
 
