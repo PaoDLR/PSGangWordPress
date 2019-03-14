@@ -107,12 +107,15 @@
   </head>
   <body>
       
+      <!-- header -->
      <div class="headerCSS">
          <img src="https://lh3.googleusercontent.com/4uDjlPVjSID_i590xMHU-ZyK_DGY8rHxO7wexYJXTOQvSuR8I7_-n03KMVVQKXvBAAmgK5kmvnq53ikUEyQd6G_irLVZ5_Axxq9cKiLNKFYp6RmmeeE2EF6iUpe30Z86DtUrhJ5AzHetdP9Pa7vTAbngR70OuIZln9mc68ylpZtc0AvawW1B7HyXkIjrGZhdAl1XoPlIonVMGbhceZh6v7MogYbgf7nkiRjoOOwtJuwfMxy0mBdnkgFGos165Fcnl5iGF_aGaaLIVLmGHgIGNOqDoMotSCfCl33_t33HooJBqkVgwh_dCEl9G1r0xEaitkuWqEpeOAZyopoqaW8fSHpxJn9eNi5OWYk8iu3DRQkW-AYKAkdgRCPNo9LqubsKt3U7grk31uany7b0yuFNcVJRy4p3tnL7FGOE9RQxKEHSDUwUI29r-6jOx8NfXiD2Vv4r1VnMXJQqtMNgbI0hpVxMg9PJynRm6gy-n7Y_9Nrlwv_-W8mjF55MRFTDWqzVbOo6WzPZf1v8RDW75Mz4AzvLYyI2i__FY2NlXqb_jmbSSztpSBD03qUcsqhgQqiWA3IEE2-f0aBUewTiZ9Mh5SrNU0OfwgQZThn7s45_z7xwr--roI4iwqIUzQLbJzt1M-6vEZZX1XR42AUxogrfzBxxE2iiiZdxHXw=s128-no?.png" height="50" width="50">
          <div class="headerText">
             <p>PSG RCA Tree</p><br/>
          </div>
      </div>
+      
+    <!-- tree body -->
     <div class="container overflow-auto">
       <div class="row">
         <div class="col-lg-12">
@@ -131,14 +134,14 @@
         
       <div class="row">
         <div class="col-lg-2 text-center">
-          <p class="center-block"><span class="btn btn-default btn-lg" onclick="changeColor(this)">Value of Starts</span></p>
+          <p class="center-block"><span class="btn btn-default btn-lg">Value of Starts</span></p>
         </div>
         <div class="col-lg-9 text-center">
-          <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" onclick="changeColor(this)" style="width: 600px;">Number of Starts</span></p>
+          <p class="center-block"><span class="btn btn-default btn-lg" id="numStarts" style="width: 600px; pointer-events: none; cursor: default;">Number of Starts</span></p>
           <div class="row">
              <div class="col-lg-4" style="left: 200px;">
                 <p class="btn center-block" ><span class="glyphicon glyphicon-arrow-down"></span></p>
-                <p class="center-block"><span class="btn btn-default btn-lg" style="width: 400px;">Submit to Start Ratio</span></p>
+                <p class="center-block"><span class="btn btn-default btn-lg" style="width: 400px; pointer-events: none; cursor: default;">Submit to Start Ratio</span></p>
                 <div class="row">
                   <div class="col-lg-1" style="right: 10px;">
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
@@ -156,7 +159,7 @@
             </div>
             <div class="col-lg-4" style="left: 250px;">
                     <p class="btn center-block"><span class="glyphicon glyphicon-arrow-down"></span></p>
-                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Submits</span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg" style="pointer-events: none; cursor: default;">Number of Submits</span></p>
                 <div class="row">
                 <div class="col-lg-5" style="left: 40px;">
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
@@ -164,11 +167,11 @@
                 </div> 
                 <div class="col-lg-7" style="left: 30px;">
                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="right: 32px;"></span></p>
-                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Snapshots</span></p>
+                    <p class="center-block"><span class="btn btn-default btn-lg" style="pointer-events: none; cursor: default;">Number of Snapshots</span></p>
                     <div class="row">
                         <div class="col-lg-4" style="right: 50px;">
                             <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
-                            <p class="center-block"><span class="btn btn-default btn-lg">Conversion Rate</span></p>
+                            <p class="center-block"><span class="btn btn-default btn-lg" style="pointer-events: none; cursor: default;">Conversion Rate</span></p>
                              <div class="row">
                                 <div class="col-lg-4" style="right: 50px;">
                                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 35px;"></span></p>
@@ -182,7 +185,7 @@
                         </div>
                         <div class="col-lg-8" style="left: 60px;">
                             <p class="btn"><span class="glyphicon glyphicon-arrow-down"></span></p>
-                            <p class="center-block"><span class="btn btn-default btn-lg">Number of Connects</span></p>
+                            <p class="center-block"><span class="btn btn-default btn-lg" style="pointer-events: none; cursor: default;">Number of Connects</span></p>
                             <div class="row">    
                                 <div class="col-lg-5" style="right: 20px;">
                                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left:50px;"></span></p>
@@ -190,7 +193,7 @@
                                 </div>
                                 <div class="col-lg-7" style="left: 40px;">
                                     <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="right:10px;"></span></p>
-                                    <p class="center-block"><span class="btn btn-default btn-lg">Number of Dials</span></p>
+                                    <p class="center-block"><span class="btn btn-default btn-lg" style="pointer-events: none; cursor: default;">Number of Dials</span></p>
                                     <div class="row">
                                     <div class="col-lg-1" style="right: 70px;">
                                         <p class="btn"><span class="glyphicon glyphicon-arrow-down" style="left: 60px;"></span></p>
@@ -211,16 +214,13 @@
          </div>
         </div>
       </div>
-        
+    </div> <!-- end of tree body -->    
       
-            
-                
-           </div>    
-         <div class="searchDate">
-             <button class="headerBtn" name="Reset">Reset Map</button>
-             <button class="headerBtn" name="Save">Save Map</button>
-             <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
-         </div>
+    <div class="searchDate">
+        <button class="headerBtn" name="Reset">Reset Map</button>
+        <button class="headerBtn" name="Save">Save Map</button>
+        <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
+    </div>
   </body>
     
 </html>
