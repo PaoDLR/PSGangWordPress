@@ -210,7 +210,15 @@
               docBody += '<table>';
               for(var i=0; i< numSubNodes; i++){
                   docBody += "<tr><td>";
-                  docBody += "<p class='lead text-center bg-info panel-primary text-info center-block'>";
+                  docBody += "<p class='lead text-center bg-info panel-primary text-info center-block' ";
+                  if(subNodeValues[i] == 1){
+                     docBody += " style='color:green'>";   
+                  } else if (subNodeValues[i] == 2){
+                     docBody += " style='color:red'>";    
+                  } else{
+                     docBody += ">";   
+                  }
+                  
                   docBody += subNodes[i];
                   docBody += "</p>";
                   docBody += "</td><td><select id='choices" + i + "'>";
@@ -243,11 +251,17 @@
           }
         
           function saveChoices(){
+              var test = document.getElementById(currentNode);
               switch(currentNode){
                   case 'valStarts':
                       valStartsSub0 = document.getElementById("choices0").value;
                       valStartsSub1 = document.getElementById("choices1").value;
                       valStartsSub2 = document.getElementById("choices2").value;
+                      if(valStartsSub0 == 2){
+                          test.style.backgroundColor = 'red';
+                      }else {
+                          test.style.backgroundColor = '#d9edf7';
+                      }
                       alert(valStartsSub0 + " " + valStartsSub1 + " " + valStartsSub2);
                       break;
                       
