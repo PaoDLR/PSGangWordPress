@@ -41,7 +41,6 @@
                       
                       subNodes.push('Recruiters are prioritizing low GP requisitions');
                       subNodeValues.push(valStartsSub2);
-                      alert(subNodeValues[0]);
                       break;
                   case 'showStartRatio': numSubNodes = 8;
                       subNodes.push('Interview prep is poor');
@@ -210,7 +209,7 @@
               docBody += '<table>';
               for(var i=0; i< numSubNodes; i++){
                   docBody += "<tr><td>";
-                  docBody += "<p class='lead text-center bg-info panel-primary text-info center-block' ";
+                  docBody += "<p class='lead text-center bg-info panel-primary text-info center-block' id= 'label" + i + "' ";
                   if(subNodeValues[i] == 1){
                      docBody += " style='color:green'>";   
                   } else if (subNodeValues[i] == 2){
@@ -221,7 +220,7 @@
                   
                   docBody += subNodes[i];
                   docBody += "</p>";
-                  docBody += "</td><td><select id='choices" + i + "'>";
+                  docBody += "</td><td><select id='choices" + i + "' onchange='changeSubnodeColor(this, label" + i + ")'>";
                   docBody += "<option value='0'";
                   if(subNodeValues[i] == 0){
                      docBody += " selected='selected'>Not Assessed</option>";   
@@ -250,6 +249,18 @@
               
           }
         
+          function changeSubnodeColor(choice, label){
+              var input = choice.value;
+              
+              if(input == 1){
+                  label.style.color = 'green';
+              } else if (input == 2){
+                  label.style.color = 'red';
+              } else {
+                  label.style.color= '#31708f';
+              }
+          }
+        
           function saveChoices(){
               var test = document.getElementById(currentNode);
               switch(currentNode){
@@ -257,11 +268,6 @@
                       valStartsSub0 = document.getElementById("choices0").value;
                       valStartsSub1 = document.getElementById("choices1").value;
                       valStartsSub2 = document.getElementById("choices2").value;
-                      if(valStartsSub0 == 2){
-                          test.style.backgroundColor = 'red';
-                      }else {
-                          test.style.backgroundColor = '#d9edf7';
-                      }
                       break;
                       
                   case 'showStartRatio':
