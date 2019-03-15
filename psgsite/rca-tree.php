@@ -431,11 +431,14 @@
         }
         
         .container{
-            width: 90%;
+            width: 100%;
             height: 100%;
+            min-width: 768px;
+            min-height: 100%;
             border-color: transparent;
-			align-content: center;
-			overflow: auto;
+      			align-content: center;
+            white-space: nowrap;
+            overflow: auto;
         }
         
         .headerBtn{
@@ -471,10 +474,15 @@
         
         .btn{
             white-space: normal;
+            display: inline-block;
         }
         
         .btn:hover{
             background-color: #d9edf7;
+        }
+
+        .row{
+          white-space: normal;
         }
         
         option:hover, select:hover{
@@ -608,7 +616,7 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="close" data-dismiss="modal" onclick="saveChoices()">&times;</button>
             <h4 class="modal-title">Oops</h4>
           </div>
           <div class="modal-body">
