@@ -5,8 +5,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script>
-        var values;
+        //prevent closing the modal when clicking outside it
+        $('#myModal').modal({
+            backdrop: 'static',
+            keyboard: false
+        })
+        
+        //current node clicked, used for storing subnode value purposes
         var currentNode;
+        
+        //holds values for subnodes
         var valStartsSub0 = 0; var valStartsSub1 = 0; var valStartsSub2 = 0;
         var showStartRatioSub0 = 0; var showStartRatioSub1 = 0; var showStartRatioSub2 = 0; var showStartRatioSub3 = 0; var showStartRatioSub4 = 0; var showStartRatioSub5 = 0; var showStartRatioSub6 = 0; var showStartRatioSub7 = 0;
         var jobRatioSub0 = 0; var jobRatioSub1 = 0; var jobRatioSub2 = 0;
@@ -210,6 +218,8 @@
               for(var i=0; i< numSubNodes; i++){
                   docBody += "<tr><td>";
                   docBody += "<p class='lead text-center bg-info panel-primary text-info center-block' id= 'label" + i + "' ";
+                  
+                  //change label color depending on saved value
                   if(subNodeValues[i] == 1){
                      docBody += " style='color:green'>";   
                   } else if (subNodeValues[i] == 2){
@@ -222,6 +232,8 @@
                   docBody += "</p>";
                   docBody += "</td><td><select id='choices" + i + "' onchange='changeSubnodeColor(this, label" + i + ")'>";
                   docBody += "<option value='0'";
+                  
+                  //set the shown value in the dropdown box depending on saved value
                   if(subNodeValues[i] == 0){
                      docBody += " selected='selected'>Not Assessed</option>";   
                   } else {
@@ -245,10 +257,9 @@
               docBody += '</table>';
                                       
               body.innerHTML = docBody;
-              
-              
           }
         
+          //change subnode label when you choose a different value in the dropdown menu
           function changeSubnodeColor(choice, label){
               var input = choice.value;
               
@@ -261,6 +272,7 @@
               }
           }
         
+        //resets all values chosen in the subnodes back to 0 or not assessed.
         function resetMap(){
             valStartsSub0 = 0; valStartsSub1 = 0; valStartsSub2 = 0;
             
@@ -282,6 +294,7 @@
             alert("Choices have been reset")
         }
         
+        //called when you close the modal with the close button, saves the values inputted for each dropdown
           function saveChoices(){
               var test = document.getElementById(currentNode);
               switch(currentNode){
@@ -594,17 +607,17 @@
     </div> <!-- end of tree body -->    
       
     <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
+    <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Modal Header</h4>
+            <h4 class="modal-title">Oops</h4>
           </div>
           <div class="modal-body">
-            <p id="message">Some text in the modal.</p>
+            <p id="message">Something went wrong</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal" onclick="saveChoices()">Close</button>
