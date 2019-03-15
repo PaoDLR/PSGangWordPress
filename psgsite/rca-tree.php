@@ -262,7 +262,6 @@
                       }else {
                           test.style.backgroundColor = '#d9edf7';
                       }
-                      alert(valStartsSub0 + " " + valStartsSub1 + " " + valStartsSub2);
                       break;
                       
                   case 'showStartRatio':
@@ -274,14 +273,12 @@
                       showStartRatioSub5 = document.getElementById("choices5").value;
                       showStartRatioSub6 = document.getElementById("choices6").value;
                       showStartRatioSub7 =  document.getElementById("choices7").value;
-                      alert(showStartRatioSub0);
                       break;
                       
                   case 'jobRatio' :
                       jobRatioSub0 = document.getElementById("choices0").value;
                       jobRatioSub1 = document.getElementById("choices1").value;
                       jobRatioSub2 = document.getElementById("choices2").value;
-                      alert(jobRatioSub0);
                       break;
                       
                   case 'interviewRatio':
@@ -295,21 +292,18 @@
                       interviewRatioSub7 = document.getElementById("choices7").value;
                       interviewRatioSub8 = document.getElementById("choices8").value;
                       interviewRatioSub9 = document.getElementById("choices9").value;
-                      alert(interviewRatioSub0);
                       break;
                       
                   case 'submitRate':
                       submitRateSub0 = document.getElementById("choices0").value;
                       submitRateSub1 = document.getElementById("choices1").value;
                       submitRateSub2 = document.getElementById("choices2").value;
-                      alert(submitRateSub0);
                       break;
                       
                   case 'callQuality': 
                       callQuality0 = document.getElementById("choices0").value;
                       callQuality1 = document.getElementById("choices1").value;
                       callQuality2 = document.getElementById("choices2").value;
-                      alert(callQuality0);
                       break;
                       
                   case 'leadQuality':
@@ -317,7 +311,6 @@
                       leadQualitySub1 = document.getElementById("choices1").value;
                       leadQualitySub2 = document.getElementById("choices2").value;
                       leadQualitySub3 = document.getElementById("choices3").value;
-                      alert(leadQualitySub0);
                       break;
                       
                   case 'connectRate':
@@ -327,13 +320,11 @@
                       connectRateSub3 = document.getElementById("choices3").value;
                       connectRateSub4 = document.getElementById("choices4").value;
                       connectRateSub5 = document.getElementById("choices5").value;
-                      alert(connectRateSub0);
                       break;
                       
                   case 'dialEffort':
                       dialEffortSub0 = document.getElementById("choices0").value;
                       dialEffortSub1 = document.getElementById("choices1").value;
-                      alert(dialEffortSub0);
                       break;
                       
                   case 'numLeads':
@@ -345,7 +336,6 @@
                       numLeadsSub5 = document.getElementById("choices5").value;
                       numLeadsSub6 = document.getElementById("choices6").value;
                       numLeadsSub7 = document.getElementById("choices7").value;
-                      alert(numLeadsSub0);
                       break;
                       
                   default: numSubNodes = 0;
