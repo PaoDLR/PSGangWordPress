@@ -465,6 +465,10 @@
             white-space: normal;
         }
         
+        .btn:hover{
+            background-color: #d9edf7;
+        }
+        
         option:hover, select:hover{
             cursor: pointer;
         }
