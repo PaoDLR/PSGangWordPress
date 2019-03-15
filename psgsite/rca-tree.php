@@ -261,6 +261,27 @@
               }
           }
         
+        function resetMap(){
+            valStartsSub0 = 0; valStartsSub1 = 0; valStartsSub2 = 0;
+            
+            showStartRatioSub0 = 0; showStartRatioSub1 = 0; showStartRatioSub2 = 0; showStartRatioSub3 = 0; showStartRatioSub4 = 0; showStartRatioSub5 = 0; showStartRatioSub6 = 0; showStartRatioSub7 = 0;
+            jobRatioSub0 = 0;  jobRatioSub1 = 0;  jobRatioSub2 = 0;
+            
+            interviewRatioSub0 = 0;  interviewRatioSub1 = 0;  interviewRatioSub2 = 0;  interviewRatioSub3 = 0;  interviewRatioSub4 = 0;  interviewRatioSub5 = 0;  interviewRatioSub6 = 0;  interviewRatioSub7 = 0; interviewRatioSub8 = 0;  interviewRatioSub9 = 0;
+            
+            submitRateSub0 = 0;  submitRateSub1 = 0;  submitRateSub2 = 0;
+            
+            callQuality0 = 0; callQuality1 = 0;  callQuality2 = 0;
+            
+            leadQualitySub0 = 0;  leadQualitySub1 = 0;  leadQualitySub2 = 0;  leadQualitySub3 = 0;
+            
+            connectRateSub0 = 0;  connectRateSub1 = 0;  connectRateSub2 = 0;  connectRateSub3 = 0;  connectRateSub4 = 0;  connectRateSub5 = 0;
+            dialEffortSub0 = 0;  dialEffortSub1 = 0;
+            
+            numLeadsSub0 = 0;  numLeadsSub1 = 0;  numLeadsSub2 = 0;  numLeadsSub3 = 0;  numLeadsSub4 = 0;  numLeadsSub5 = 0;  numLeadsSub6 = 0;  numLeadsSub7 = 0;
+            alert("Choices have been reset")
+        }
+        
           function saveChoices(){
               var test = document.getElementById(currentNode);
               switch(currentNode){
@@ -590,7 +611,7 @@
     </div>
       
     <div class="searchDate">
-        <button class="headerBtn" name="Reset">Reset Map</button>
+        <button class="headerBtn" name="Reset" onclick="resetMap()">Reset Map</button>
         <button class="headerBtn" name="Save">Save Map</button>
         <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
     </div>
