@@ -870,7 +870,7 @@
 
 					function getGoalInput(){
 						//if does not exist create, else clear the old cookie then add again
-						var selected = document.getElementById('selectMonth').selectedIndex;
+						var selected = document.getElementById('selectMonth').selectedIndex+ 1;
 						console.log(selected);
 						//eraseCookie('goal'+selected);
 						var cookieString = "";
@@ -924,11 +924,16 @@
        //                  setCookie('RCACookie',newCookie);
                        	//console.log(getCookie('RCACookie'));
 
+                       	var selected = document.getElementById('selectMonth').selectedIndex + 1; 
+
 
                        	console.log(rcaIndex);
-                       	console.log(getCookie('column'+rcaIndex));
+                       	console.log(selected);
+                       	//console.log(getCookie('column'+rcaIndex));
+
                        	setCookie('RCACookie', getCookie('column'+rcaIndex));
                        	setCookie('goalCookie', getCookie('goal'+rcaIndex));
+                       	console.log(getCookie('goalCookie'));
 
  					}
 
