@@ -175,7 +175,7 @@
         function getInput(){
             var inputArray = [];
             for (var i=1;i<=17;i++) {
-                var row = document.getElementById('value' + i).innerHTML;
+                var row = document.getElementById('editValue' + i).innerHTML;
                 inputArray.push(row);
                 //console.log("Row " + i + ": " + row);
                 //console.log(inputArray[i-1]);
@@ -288,7 +288,7 @@
 												        td.setAttribute('border', '1');
 												        td.setAttribute('contenteditable', 'true');
 										              	var text = document.createTextNode("0");
-                                                        td.setAttribute('id', 'value' + i);
+                                                        td.setAttribute('id', 'editValue' + i);
                                                         //console.log(td.getAttribute('id'));
 										              	tr.appendChild(td);
 										              	td.appendChild(text);
@@ -383,7 +383,7 @@
 												        //td.style.backgroundColor = '#f08080';
 												        td.setAttribute('border', '1');
 												        td.setAttribute('contenteditable', 'true');
-												        td.setAttribute('id', 'value' + i);
+												        td.setAttribute('id', 'goalValue' + i);
 										              	var text = document.createTextNode("0");
 										              	tr.appendChild(td);
 										              	td.appendChild(text);
@@ -414,9 +414,13 @@
 				    <table>
 				    	<tr>
 				    		<td id="editTable2">
-				    			<script>
-					    			
-				    			</script>
+				    			Week:
+				    			<input type="week">
+				    			<input type="week">
+				    			<hr>
+				    			Month:
+				    			<input type="month">
+				    			<input type="month">
 				    			<button type='button'>Submit</button>
 				    		</td>
 				    	</tr>
@@ -858,21 +862,14 @@
 						//if does not exist create, else clear the old cookie then add again
 						var selected = document.getElementById('selectMonth').selectedIndex;
 						console.log(selected);
-                        
-                        if (!checkCookie('goal'+selected)){
-                            for (var j=0;j<17;j++){
-                                setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('value' + (j+1)).innerHTML);
 
-                            }
-                            console.log(getCookie('goal'+selected));
-                        }
-                        else {
-                            getCookie('goal'+selected).split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-                            for (var j=0;j<17;j++){
-                                setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('value' + (j+1)).innerHTML);
+						for (var j=0;j<17;j++){
+							setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('goalValue' + (j+1)).innerHTML);
+							
+						}
+						console.log(getCookie('goal'+selected));
 
-                            }
-                        }
+
 
 					}
 
@@ -889,37 +886,19 @@
 
  						var a = 1;
  						var b = 1;
-                        
-                        if (!checkCookie('RCACookie')){
 
-                            for (var i=0;i<17;i++){
-                                if(cookieArr[i] != "0" && goalArray[i] != "0"){
-                                    a = parseFloat(cookieArr[i]);
-                                    b = parseFloat(goalArray[i]);
-                                    divide = a/b;
-                                    newCookie += divide + "||";
-                                }
+ 						for (var i=0;i<17;i++){
+ 							if(cookieArr[i] != "0" && goalArray[i] != "0"){
+ 								a = parseFloat(cookieArr[i]);
+ 								b = parseFloat(goalArray[i]);
+ 								divide = a/b;
+ 								newCookie += divide + "||";
+ 							}
 
-                            }
+ 						}
 
-                            setCookie('RCACookie',newCookie);
-                            //console.log(getCookie('RCACookie'));
-                        }
-                        else {
-                            getCookie('RCACookie').split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-                            
-                            for (var i=0;i<17;i++){
-                                if(cookieArr[i] != "0" && goalArray[i] != "0"){
-                                    a = parseFloat(cookieArr[i]);
-                                    b = parseFloat(goalArray[i]);
-                                    divide = a/b;
-                                    newCookie += divide + "||";
-                                }
-
-                            }
-
-                            setCookie('RCACookie',newCookie);
-                        }
+                        setCookie('RCACookie',newCookie);
+                       	//console.log(getCookie('RCACookie'));
  					}
 
 
