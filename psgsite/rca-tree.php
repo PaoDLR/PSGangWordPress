@@ -21,6 +21,180 @@
         var dialEffortSub0 = 0; var dialEffortSub1 = 0;
         var numLeadsSub0 = 0; var numLeadsSub1 = 0; var numLeadsSub2 = 0; var numLeadsSub3 = 0; var numLeadsSub4 = 0; var numLeadsSub5 = 0; var numLeadsSub6 = 0; var numLeadsSub7 = 0;
         
+          //function to get data from the cookie
+          function getCookie(cname) {
+              var name = cname + "=";
+              var ca = document.cookie.split(';');
+              for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                  c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                  return c.substring(name.length, c.length);
+                }
+              }
+              return "";
+          }
+        
+          //function to initialize the button colors based on the data from the heat map
+          function initBtnColor(){
+              var goalData = getCookie('goal0').split('||');
+              var actualData = getCookie('RCACookie').split('||');
+              
+              //value of starts
+              if(actualData[1] < goalData[1]){
+                  document.getElementById("valStarts").style.backgroundColor = '#f17878';
+              }else if(actualData[1] == goalData[1]){
+                  document.getElementById("valStarts").style.backgroundColor = 'Yellow';
+              }else if(actualData[1] > goalData[1]){
+                  document.getElementById("valStarts").style.backgroundColor = '#87f279';
+              }
+              
+              //number of starts
+              if(actualData[2] < goalData[2]){
+                  document.getElementById("numStarts").style.backgroundColor = '#f17878';
+              }else if(actualData[2] == goalData[2]){
+                  document.getElementById("numStarts").style.backgroundColor = 'Yellow';
+              }else if(actualData[2] > goalData[2]){
+                  document.getElementById("numStarts").style.backgroundColor = '#87f279';
+              }
+              
+              //submit to start ratio
+              if(actualData[3] < goalData[3]){
+                  document.getElementById("subStartRatio").style.backgroundColor = '#f17878';
+              }else if(actualData[3] == goalData[3]){
+                  document.getElementById("subStartRatio").style.backgroundColor = 'Yellow';
+              }else if(actualData[3] > goalData[3]){
+                  document.getElementById("subStartRatio").style.backgroundColor = '#87f279';
+              }
+              
+              //submit to interview show ratio
+              if(actualData[4] < goalData[4]){
+                  document.getElementById("interviewRatio").style.backgroundColor = '#f17878';
+              }else if(actualData[4] == goalData[4]){
+                  document.getElementById("interviewRatio").style.backgroundColor = 'Yellow';
+              }else if(actualData[4] > goalData[4]){
+                  document.getElementById("interviewRatio").style.backgroundColor = '#87f279';
+              }
+              
+              //interview show to start ratio
+              if(actualData[5] < goalData[5]){
+                  document.getElementById("showStartRatio").style.backgroundColor = '#f17878';
+              }else if(actualData[5] == goalData[5]){
+                  document.getElementById("showStartRatio").style.backgroundColor = 'Yellow';
+              }else if(actualData[5] > goalData[5]){
+                  document.getElementById("showStartRatio").style.backgroundColor = '#87f279';
+              }
+              
+              //job opening ratio
+              if(actualData[6] < goalData[6]){
+                  document.getElementById("jobRatio").style.backgroundColor = '#f17878';
+              }else if(actualData[6] == goalData[6]){
+                  document.getElementById("jobRatio").style.backgroundColor = 'Yellow';
+              }else if(actualData[6] > goalData[6]){
+                  document.getElementById("jobRatio").style.backgroundColor = '#87f279';
+              }
+              
+              //number of submits
+              if(actualData[7] < goalData[7]){
+                  document.getElementById("numSubmits").style.backgroundColor = '#f17878';
+              }else if(actualData[7] == goalData[7]){
+                  document.getElementById("numSubmits").style.backgroundColor = 'Yellow';
+              }else if(actualData[7] > goalData[7]){
+                  document.getElementById("numSubmits").style.backgroundColor = '#87f279';
+              }
+              
+              //submit rate
+              if(actualData[8] < goalData[8]){
+                  document.getElementById("submitRate").style.backgroundColor = '#f17878';
+              }else if(actualData[8] == goalData[8]){
+                  document.getElementById("submitRate").style.backgroundColor = 'Yellow';
+              }else if(actualData[8] > goalData[8]){
+                  document.getElementById("submitRate").style.backgroundColor = '#87f279';
+              }
+              
+              //number of snapshots
+              if(actualData[9] < goalData[9]){
+                  document.getElementById("numSnapshots").style.backgroundColor = '#f17878';
+              }else if(actualData[9] == goalData[9]){
+                  document.getElementById("numSnapshots").style.backgroundColor = 'Yellow';
+              }else if(actualData[9] > goalData[9]){
+                  document.getElementById("numSnapshots").style.backgroundColor = '#87f279';
+              }
+              
+              //conversion rate
+              if(actualData[10] < goalData[10]){
+                  document.getElementById("conversionRate").style.backgroundColor = '#f17878';
+              }else if(actualData[10] == goalData[10]){
+                  document.getElementById("conversionRate").style.backgroundColor = 'Yellow';
+              }else if(actualData[10] > goalData[10]){
+                  document.getElementById("conversionRate").style.backgroundColor = '#87f279';
+              }
+              
+              //call quality
+              if(actualData[11] < goalData[11]){
+                  document.getElementById("callQuality").style.backgroundColor = '#f17878';
+              }else if(actualData[11] == goalData[11]){
+                  document.getElementById("callQuality").style.backgroundColor = 'Yellow';
+              }else if(actualData[11] > goalData[11]){
+                  document.getElementById("callQuality").style.backgroundColor = '#87f279';
+              }
+              
+              //lead quality
+              if(actualData[12] < goalData[12]){
+                  document.getElementById("leadQuality").style.backgroundColor = '#f17878';
+              }else if(actualData[12] == goalData[12]){
+                  document.getElementById("leadQuality").style.backgroundColor = 'Yellow';
+              }else if(actualData[12] > goalData[12]){
+                  document.getElementById("leadQuality").style.backgroundColor = '#87f279';
+              }
+              
+              //number of connects
+              if(actualData[13] < goalData[13]){
+                  document.getElementById("numConnects").style.backgroundColor = '#f17878';
+              }else if(actualData[13] == goalData[13]){
+                  document.getElementById("numConnects").style.backgroundColor = 'Yellow';
+              }else if(actualData[13] > goalData[13]){
+                  document.getElementById("numConnects").style.backgroundColor = '#87f279';
+              }
+              
+              //connect rate
+              if(actualData[14] < goalData[14]){
+                  document.getElementById("connectRate").style.backgroundColor = '#f17878';
+              }else if(actualData[14] == goalData[14]){
+                  document.getElementById("connectRate").style.backgroundColor = 'Yellow';
+              }else if(actualData[14] > goalData[14]){
+                  document.getElementById("connectRate").style.backgroundColor = '#87f279';
+              }
+              
+              //number of dials
+              if(actualData[15] < goalData[15]){
+                  document.getElementById("numDials").style.backgroundColor = '#f17878';
+              }else if(actualData[15] == goalData[15]){
+                  document.getElementById("numDials").style.backgroundColor = 'Yellow';
+              }else if(actualData[15] > goalData[15]){
+                  document.getElementById("numDials").style.backgroundColor = '#87f279';
+              }
+              
+              //insufficient dial effort
+              if(actualData[16] < goalData[16]){
+                  document.getElementById("dialEffort").style.backgroundColor = '#f17878';
+              }else if(actualData[16] == goalData[16]){
+                  document.getElementById("dialEffort").style.backgroundColor = 'Yellow';
+              }else if(actualData[16] > goalData[16]){
+                  document.getElementById("dialEffort").style.backgroundColor = '#87f279';
+              }
+              
+              //number of callable leads
+              if(actualData[17] < goalData[17]){
+                  document.getElementById("numLeads").style.backgroundColor = '#f17878';
+              }else if(actualData[17] == goalData[17]){
+                  document.getElementById("numLeads").style.backgroundColor = 'Yellow';
+              }else if(actualData[17] > goalData[17]){
+                  document.getElementById("numLeads").style.backgroundColor = '#87f279';
+              }
+          }
         
           function openModal(btn){
               var body = document.getElementById("message");
@@ -35,7 +209,8 @@
               header.innerHTML = btn.innerHTML;
               
               switch(elemId){
-                  case 'valStarts': numSubNodes = 3;
+                  case 'valStarts': 
+                      numSubNodes = 3;
                       subNodes.push('GP of requisitions is too low');
                       subNodeValues.push(valStartsSub0);
                       
@@ -377,6 +552,10 @@
                 }
           }
         
+        function returnToHeatMap(){
+            location.replace("http://localhost/PSG/RCAHeatmap.php");
+        }
+        
 //        $(document).ready(function(){
 //            $("#valStarts").click(function(){
 //                alert('banana');
@@ -480,7 +659,6 @@
         .btn:hover{
             background-color: #d9edf7;
         }
-
         .row{
           white-space: normal;
         }
@@ -498,7 +676,7 @@
     </style>
       
   </head>
-  <body>
+  <body onload="initBtnColor()">
       
       <!-- header -->
      <div class="headerCSS">
@@ -633,7 +811,7 @@
     <div class="searchDate">
         <button class="headerBtn" name="Reset" onclick="resetMap()">Reset Map</button>
         <button class="headerBtn" name="Save">Save Map</button>
-        <button class="headerBtn" name="Heat Map">Back to Heat Map</button>
+        <button class="headerBtn" name="Heat Map" onclick="returnToHeatMap()">Back to Heat Map</button>
     </div>
   </body>
     
