@@ -420,7 +420,7 @@
 				  </div>
 
 				</div>
-
+                <form method='POST'>
 				<!-- The benchmark Modal -->
 				<div id="myModal2" class="modal">
 
@@ -457,13 +457,44 @@
 				    			<select id="rcaSelectMonth">
 				    				
 				    			</select>
-				    			<input type="button" value='Submit' onclick='generateRCACookie()'>
+				    			<input type="submit" value='Submit' onclick='generateRCACookie()' name='submitDB'>
+                        <?php
+                        echo "watch me \n";
+                        if (isset($_POST["submitDB"])){
+                        require_once('C:/xampp/htdocs/leo/try1/dbconn2.php');
+                        $conn->set_charset("utf8");
+                        //$date = $_POST['today']; // gets the date inputted by user
+                        //$strDate = "$date"; // changes date type into string type for easier parsing
+                        //$year = $strDate[0].$strDate[1].$strDate[2].$strDate[3]; // gets the year
+                        //$month = $strDate[5].$strDate[6]; // gets the month
+                        //$testnostart = $_POST['value1'];
+                        //$testssr = $_POST['value2'];
+                        $rca_string = $_COOKIE['RCACookie'];
+                            echo $rca_string;
+                        $sql_statement = "INSERT INTO ariel.rca_test (username, rca_string) 
+                        VALUES ('recruiter 1', '".$rca_string."');";
+                        if($conn->query($sql_statement) == TRUE){
+                            echo "NICE";
+
+                        }
+                        else{
+                            echo "Error : " . $sql_statement. "<br>" . $conn->error;
+                        }
+                            
+                            echo "whip";
+                    }
+                                
+                    echo "now watch me nae nae";  
+                  ?>
+                       
+                                
 				    		</td>
 				    	</tr>
 				    </table>
 				  </div>
 
 				</div>
+                     </form>
 		    </td>
 			
 		    <td name="tableData" id="innerTable" style="width:200px"> <!--main table generation goes in this td-->
