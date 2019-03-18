@@ -321,8 +321,9 @@
 								    }
 								    table();
 				    			</script>
-				    			<input type="button" onclick="getInput()" value='Submit'>
+				    			
                                 </form>
+                                <input type="button" onclick="getInput()" value='Submit'>
 				    		</td>
 				    	</tr>
 				    </table>
@@ -427,18 +428,35 @@
 				  <!-- Modal content -->
 				  <div class="modal-content">
 				    <span class="close">&times;</span>
-				    <table>
+				    <table id="benchmarkTable">
 				    	<tr>
 				    		<td id="editTable2">
 				    			Week:
+				    			<br>
 				    			<input type="week">
 				    			<input type="week">
+				    			<button type='button' onclick="createBenchmarkTables()">Submit</button>
+				    			<hr>
+				    			Or
 				    			<hr>
 				    			Month:
 				    			<input type="month">
 				    			<input type="month">
-				    			<button type='button'>Submit</button>
+				    			<button type='button' onclick="createBenchmarkTables()">Submit</button>
+
+				    			
 				    		</td>
+				    	</tr>
+				    	<tr>
+				    		<td id="editTable22">
+				    		</td>
+				    	</tr>
+				    	<tr>
+				    		<td>
+				    			<button type='button' onclick="closeBenchmark()">Close</button>
+
+				    		</td>
+				    		
 				    	</tr>
 				    </table>
 				  </div>
@@ -718,7 +736,7 @@
 				          			}
 				          			else{
 					          			var td = document.createElement('td');
-					          			td.style.width = '50%';
+					          			td.style.width = '300px';
 					          			//console.log(columns[i]);
 						              	var text = document.createTextNode(columns[i]);
 						              	tr.appendChild(td);
@@ -734,6 +752,7 @@
 								        th.style.borderCollapse = 'collapse';
 								        th.style.borderColor = 'black';
 								        th.style.backgroundColor = 'white';
+								        th.style.borderBottom = '1px solid black';
 								        th.setAttribute('border', '1');
 								        //console.log("j = " + j);
 								        if(mondays[j-1].getFullYear() == '1970'){
@@ -754,6 +773,7 @@
 								        td.style.borderCollapse = 'collapse';
 								        td.style.borderColor = 'black';
 								        td.style.backgroundColor = '#f08080';
+								        td.style.borderBottom = '1px solid black';
 								        td.setAttribute('border', '1');
 								        //td.setAttribute('contenteditable', 'true');
 								        if (editIndex != undefined){
@@ -932,6 +952,87 @@
                        	setCookie('goalCookie', getCookie('goal'+rcaIndex));
                        	console.log(getCookie('goalCookie'));
  					}
+
+ 					function table2(){
+ 						var columns = ["KPIs", "Number of Starts", "Sumbit to Start Ratio", "Submit to Interview Show Ratio", "Interview Show to Start Ratio", "Job Opening Ratio", "Number of Submits", "Submit Rate", "Number of Snapshots", "Conversion Rate", "Call Quality Score", "Number of Connects", "Connect Rate", "Dial Effort (LPR Rate)", "Number of Callable Leads", "No. of Contractors", "Remarks", "Data Options"];
+
+						var body = document.getElementById('editTable22');
+						var tbl = document.createElement('table');
+						var tbdy = document.createElement('tbody');
+
+						for (var i = 0; i < columns.length; i++) { //loop for row, loop kpi here
+
+							var tr = document.createElement('tr');
+							for (var j = 0; j < 3; j++) { //loop for column, loop dates here
+								if(j == 0){
+									if(i == 0){
+								    	var th = document.createElement('th');
+									    th.style.width = '50%';
+									    //console.log(columns[i]);
+										var text = document.createTextNode(columns[i]);
+										tr.appendChild(th);
+										th.appendChild(text);
+								    }
+								    else{
+									          			var td = document.createElement('td');
+									          			td.style.width = '50%';
+									          			//console.log(columns[i]);
+										              	var text = document.createTextNode(columns[i]);
+										              	tr.appendChild(td);
+										              	td.appendChild(text);
+									              	}
+								          		}
+								          		else{
+								          			if(i == 0){
+								          				var th = document.createElement('th');
+										            	th.style.width = '20%';
+												        th.style.height = '50px';
+												        th.style.textAlign = 'center';
+												        th.style.borderCollapse = 'collapse';
+												        th.style.borderColor = 'black';
+												        th.style.backgroundColor = 'white';
+												        th.setAttribute('border', '1');
+										              	var text = document.createTextNode("Head");
+										              	tr.appendChild(th);
+										              	th.appendChild(text);
+								          			}
+								          			else{
+										            	var td = document.createElement('td');
+										            	td.style.width = '20%';
+												        td.style.height = '50px';
+												        td.style.textAlign = 'center';
+												        td.style.borderCollapse = 'collapse';
+												        td.style.borderColor = 'black';
+												        //td.style.backgroundColor = '#f08080';
+												        td.setAttribute('border', '1');
+												        td.setAttribute('contenteditable', 'true');
+												        td.setAttribute('id', 'goalValue' + i);
+										              	var text = document.createTextNode("0");
+										              	tr.appendChild(td);
+										              	td.appendChild(text);
+										            }
+									            }
+								          	}
+								          	tbdy.appendChild(tr);
+								        }
+
+  						
+						tbl.appendChild(tbdy);
+						
+						body.appendChild(tbl);
+ 					}
+
+ 					function createBenchmarkTables(){
+ 						console.log("IN FUNCTION");
+						
+						table2();
+					}
+
+					function closeBenchmark(){
+				    	document.getElementById("benchmarkTable").deleteRow(1);
+				    	document.getElementById('myModal2').style.display='none';
+				    }
+
                     
                 
 				    	
