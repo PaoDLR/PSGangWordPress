@@ -3,6 +3,33 @@
 <head>
 	<title></title>
 	<style>
+        
+        .headerRight{
+            margin-top: 25px;
+            float: right;
+        }
+        
+        .headerCSS{
+            font-family: Century Gothic;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            width: 300px;
+            float: left;
+        }
+        
+        .headerCSS img{
+            flex-grow: 0px;
+            flex-shrink: 0px;
+            margin-left: 10px;
+        }
+        
+        .headerText p{
+            margin-left: 15px;
+            font-family: Century Gothic;
+            font-size: 20px;
+            margin-top: 25px;
+        }
     
 		table, th, td {
 		  line-height: 30px;
@@ -10,7 +37,6 @@
 		  text-align: center;
 		  
 		}
-
 		#data tr:hover {background-color: #ddd;}
 		    
 		#inner {
@@ -36,7 +62,6 @@
 		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 		  margin: auto;
 		}
-
 		/* Modal Content */
 		.modal-content {
 		  position: relative;
@@ -51,18 +76,15 @@
 		  animation-name: animatetop;
 		  animation-duration: 0.4s;
 		}
-
 		/* Add Animation */
 		@-webkit-keyframes animatetop {
 		  from {top:-300px; opacity:0} 
 		  to {top:0; opacity:1}
 		}
-
 		@keyframes animatetop {
 		  from {top:-300px; opacity:0}
 		  to {top:0; opacity:1}
 		}
-
 		/* The Close Button */
 		.close {
 		  color: white;
@@ -70,26 +92,22 @@
 		  font-size: 28px;
 		  font-weight: bold;
 		}
-
 		.close:hover,
 		.close:focus {
 		  color: #000;
 		  text-decoration: none;
 		  cursor: pointer;
 		}
-
 		.modal-header {
 		  padding: 2px 16px;
 		  height: 50px;
 		  background-color: #daa520;
 		  color: white;
 		}
-
 		.modal-body {
 		  padding: 2px 16px;
 		    height: 50px;
 		}   
-
 		    
 	</style>
     
@@ -104,7 +122,8 @@
 </head>
 <body>
     
-    
+    <!-- header -->
+    <div class="headerRight">
 	<form id="form" action="" method="POST">
 <!--	    <input type="week" name="today" value="" min="2010-01">-->
         <input type="month" id="monthPicker" name="today" value="" min="2010-01">
@@ -116,10 +135,22 @@
         <button type="button" onClick="tableCreate()">Submit</button>
 <!--	    <button onclick="table()">Submit</button>-->
 	</form>
-    <div><p id="demo"></p></div>
+    </div>
+    
+     <div class="headerCSS">
+         <img src="https://lh3.googleusercontent.com/4uDjlPVjSID_i590xMHU-ZyK_DGY8rHxO7wexYJXTOQvSuR8I7_-n03KMVVQKXvBAAmgK5kmvnq53ikUEyQd6G_irLVZ5_Axxq9cKiLNKFYp6RmmeeE2EF6iUpe30Z86DtUrhJ5AzHetdP9Pa7vTAbngR70OuIZln9mc68ylpZtc0AvawW1B7HyXkIjrGZhdAl1XoPlIonVMGbhceZh6v7MogYbgf7nkiRjoOOwtJuwfMxy0mBdnkgFGos165Fcnl5iGF_aGaaLIVLmGHgIGNOqDoMotSCfCl33_t33HooJBqkVgwh_dCEl9G1r0xEaitkuWqEpeOAZyopoqaW8fSHpxJn9eNi5OWYk8iu3DRQkW-AYKAkdgRCPNo9LqubsKt3U7grk31uany7b0yuFNcVJRy4p3tnL7FGOE9RQxKEHSDUwUI29r-6jOx8NfXiD2Vv4r1VnMXJQqtMNgbI0hpVxMg9PJynRm6gy-n7Y_9Nrlwv_-W8mjF55MRFTDWqzVbOo6WzPZf1v8RDW75Mz4AzvLYyI2i__FY2NlXqb_jmbSSztpSBD03qUcsqhgQqiWA3IEE2-f0aBUewTiZ9Mh5SrNU0OfwgQZThn7s45_z7xwr--roI4iwqIUzQLbJzt1M-6vEZZX1XR42AUxogrfzBxxE2iiiZdxHXw=s128-no?.png" height="50" width="50">
+         <div class="headerText">
+            <p>PSG RCA Tree</p><br/>
+         </div>
+     </div>
+    
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
 	<hr>
-    
-    
     
     <script>
         var today = new Date();
@@ -132,12 +163,8 @@
 		    if(mm<10){
 		        mm='0'+mm
 		    } 
-
 		today = yyyy+'-'+mm+'-'+dd;
 		// document.getElementById("demo").innerHTML = document.getElementById("monthPicker").value;
-        function hi(){
-            document.getElementById("demo").innerHTML = document.getElementById("monthPicker").value;
-        }
     </script>
 
 	<?php
@@ -148,7 +175,6 @@
             $month = $strDate[5].$strDate[6]; // gets the month
         //    $qtr = getQtr($month);
     }
-
     // function getQtr($month){
     // 	$qtrTemp = 1;
     // 	for($i=1;$i<=12;$i++){
@@ -160,11 +186,8 @@
 	   //  		$qtrTemp++;
 	   //  	}
 	    	
-
 	   //  }
-
     // }
-
             // get all mondays of that month
             // feb mondays: 4, 11, 18, 25
             // create an array that contains all mondays of that month
@@ -184,10 +207,7 @@
             tableCreate(inputArray);
             
     
-
-
         }
-
     </script>
 
 
@@ -229,7 +249,6 @@
 				    			<script>
 					    			function table(){
 					    				var columns = ["KPIs", "Number of Starts", "Sumbit to Start Ratio", "Submit to Interview Show Ratio", "Interview Show to Start Ratio", "Job Opening Ratio", "Number of Submits", "Submit Rate", "Number of Snapshots", "Conversion Rate", "Call Quality Score", "Number of Connects", "Connect Rate", "Dial Effort (LPR Rate)", "Number of Callable Leads", "No. of Contractors", "Remarks", "Data Options"];
-
 								        var body = document.getElementById('editTable');
 								        var tbl = document.createElement('table');
 								        // tbl.setAttribute('class', 'tbl');
@@ -242,7 +261,6 @@
 								        // tbl.setAttribute('border', '1');
 								        var tbdy = document.createElement('tbody');
 								        for (var i = 0; i < columns.length; i++) { //loop for row, loop kpi here
-
 								        	var tr = document.createElement('tr');
 								          	for (var j = 0; j < 2; j++) { //loop for column, loop dates here
 								          		if(j == 0){
@@ -325,7 +343,6 @@
 				    			<script>
 					    			function table(){
 					    				var columns = ["KPIs", "Number of Starts", "Sumbit to Start Ratio", "Submit to Interview Show Ratio", "Interview Show to Start Ratio", "Job Opening Ratio", "Number of Submits", "Submit Rate", "Number of Snapshots", "Conversion Rate", "Call Quality Score", "Number of Connects", "Connect Rate", "Dial Effort (LPR Rate)", "Number of Callable Leads", "No. of Contractors", "Remarks", "Data Options"];
-
 								        var body = document.getElementById('editTable1');
 								        var tbl = document.createElement('table');
 								        // tbl.setAttribute('class', 'tbl');
@@ -338,7 +355,6 @@
 								        // tbl.setAttribute('border', '1');
 								        var tbdy = document.createElement('tbody');
 								        for (var i = 0; i < columns.length; i++) { //loop for row, loop kpi here
-
 								        	var tr = document.createElement('tr');
 								          	for (var j = 0; j < 2; j++) { //loop for column, loop dates here
 								          		if(j == 0){
@@ -458,26 +474,22 @@
 					var modal1 = document.getElementById('myModal1');
 					var modal2 = document.getElementById('myModal2');
 					var modal3 = document.getElementById('myModal3');
-
 					// Get the button that opens the modal
 					var editBtn = document.getElementById("dataBtn");
 					var goalBtn = document.getElementById("goalBtn");
 					var benchBtn = document.getElementById("benchBtn");
 					var rcaBtn = document.getElementById("rcaBtn");
-
 					// Get the <span> element that closes the modal
 					var span = document.getElementsByClassName("close")[0];
 					var span1 = document.getElementsByClassName("close")[1];
 					var span2 = document.getElementsByClassName("close")[2];
 					var span3 = document.getElementsByClassName("close")[3];
-
 					var editIndex = 1;
 					var rcaIndex = 1;
 					var globalEditArray = [];
 					var globalEditIndex = 0;
                     
                     
-
 					// When the user clicks on the button, open the modal 
 					editBtn.onclick = function() {
 					  modal.style.display = "block";
@@ -504,10 +516,6 @@
 					  var rcaIndex = select.selectedIndex + 1;
 					  //console.log("rcaIndex = " + rcaIndex);
 					}
-
-
-
-
 					// When the user clicks on <span> (x), close the modal
 					span.onclick = function() {
 					  modal.style.display = "none";
@@ -521,7 +529,6 @@
 					span3.onclick = function() {
 					  modal3.style.display = "none";
 					}
-
 					// When the user clicks anywhere outside of the modal, close it
 					window.onclick = function(event) {
 					  if (event.target == modal || event.target == modal1 || event.target == modal2 || event.target == modal3) {
@@ -529,10 +536,8 @@
 					    modal1.style.display = "none";
 					    modal2.style.display = "none";
 					    modal3.style.display = "none";
-
 					  }
 					}
-
 		        	
                     function tableCreate(inputArray) {
                         
@@ -556,14 +561,11 @@
 						var q3l = 92;
 						var q4l = 92;
 						var monthCnt;
-
 						
-
 						//console.log(typeof yearIn);
 						//console.log(yyyy);
 						//console.log(mm + 1);
 						//console.log(dd);
-
 						var endDateTemp = new Date(yyyy.toString()+'-'+ mm.toString()+'-'+ dd.toString());
 						var mondays = [];
 						var d1 = new Date(yearIn + '-01-01');
@@ -591,7 +593,6 @@
 								    		mondays.push(new Date('1970-01-01'));
 								    		monthCnt++;
 								    	}
-
 								    }
 								    d1.setDate(d1.getDate() + 1);
 								}
@@ -652,8 +653,6 @@
 								break;
 						}
 						//console.log(mondays);
-
-
 						var select = document.getElementById("selectMonth");
 						var select1 = document.getElementById("rcaSelectMonth");
 						select.options.length = 0;
@@ -665,22 +664,16 @@
 							}
 							else{
 								select.options[select.options.length] = new Option(months[mondays[index - 2].getMonth()], index);
-
 								select1.options[select1.options.length] = new Option(months[mondays[index - 2].getMonth()], index);
 							}
-
 						}
 						
-
 						
 		        		var columns = ["KPIs", "Number of Starts", "Sumbit to Start Ratio", "Submit to Interview Show Ratio", "Interview Show to Start Ratio", "Job Opening Ratio", "Number of Submits", "Submit Rate", "Number of Snapshots", "Conversion Rate", "Call Quality Score", "Number of Connects", "Connect Rate", "Dial Effort (LPR Rate)", "Number of Callable Leads", "No. of Contractors", "Remarks", "Data Options"];
-
 				        var body = document.getElementById('innerTable');
 				        var tbl = document.createElement('table');
 				        var tbdy = document.createElement('tbody');
-
 				        for (var i = 0; i < columns.length; i++) { //loop for row, loop kpi here
-
 				        	var tr = document.createElement('tr');
 				          	for (var j = 0; j <= mondays.length; j++) { //loop for column, loop dates here
 				          		if(j == 0){
@@ -749,7 +742,6 @@
                                                         setCookie('column'+j,getCookie('column'+j) + "||" + inputArray[k]);
                                                     
                                                     //console.log("New cookie: " + getCookie('column'+j));
-
                                                 }
                                                 else {
                                                     //console.log("Cookie exists: " + getCookie('column'+j));
@@ -782,10 +774,8 @@
 				        }
 				        tbl.appendChild(tbdy);
 				        body.appendChild(tbl);
-
 				        globalEditArray.push(editIndex);
 				    }
-
 				    function getQtr(month){
 				    	//console.log("im in");
 				    	var qtrTemp = 1;
@@ -847,14 +837,10 @@
                         
                         
                     }
-
                     function eraseCookie(name) {
                     	// document.cookie = name+ "=;expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/;";
-
                     	var cookie = getCookie(name);
-
                     	cookie.split(";").forEach(function(c) { cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
-
                     	
                     }
                     
@@ -867,48 +853,34 @@
 	                        tableCreate();
 	                    }
                     }
-
 					function getGoalInput(){
 						//if does not exist create, else clear the old cookie then add again
 						var selected = document.getElementById('selectMonth').selectedIndex+ 1;
 						console.log(selected);
 						//eraseCookie('goal'+selected);
 						var cookieString = "";
-
 						setCookie('goal'+selected, "");
-
 						for (var i=0;i<17;i++){
 							cookieString+=document.getElementById('goalValue'+(i+1)).innerHTML + "||";
 							console.log(document.getElementById('goalValue'+(i+1)).innerHTML);
-
 						}
 						console.log("Cookie String: " + cookieString);
-
 						setCookie('goal'+selected, cookieString);					
-
 							// for (var j=0;j<17;j++){
 							// 	setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('goalValue' + (j+1)).innerHTML);
 								
 							// }
 							console.log(getCookie('goal'+selected));
-
 					}
-
                     function generateRCACookie(){
  						// var j = rcaIndex;
-
  						// var cookieVal = getCookie('column'+j);
  						// var cookieArr = cookieVal.split("||");
-
  						// var goalArray = getCookie('goal'+j).split("||");
-
  						// var newCookie = "";
-
  						// var divide;
-
  						// var a = 1;
  						// var b = 1;
-
  						// for (var i=0;i<17;i++){
  						// 	if(cookieArr[i] != "0" && goalArray[i] != "0"){
  						// 		console.log(cookieArr[i])
@@ -918,33 +890,20 @@
  						// 		divide = a/b;
  						// 		newCookie += divide + "||";
  						// 	}
-
  						// }
-
        //                  setCookie('RCACookie',newCookie);
                        	//console.log(getCookie('RCACookie'));
-
                        	var selected = document.getElementById('selectMonth').selectedIndex + 1; 
-
-
                        	console.log(rcaIndex);
                        	console.log(selected);
                        	//console.log(getCookie('column'+rcaIndex));
-
                        	setCookie('RCACookie', getCookie('column'+rcaIndex));
                        	setCookie('goalCookie', getCookie('goal'+rcaIndex));
                        	console.log(getCookie('goalCookie'));
-
  					}
-
-
                     
-
-
-
                 
 				    	
-
 				</script>
 	    		
 		    </td>
