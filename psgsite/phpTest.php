@@ -117,6 +117,8 @@
     Q3 - Jul1 - Sep30 92 days
     Q4 = Oct1 - Dec31 92 days
 -->
+    
+
 	
 
 </head>
@@ -128,8 +130,24 @@
 <!--	    <input type="week" name="today" value="" min="2010-01">-->
         <input type="month" id="monthPicker" name="today" value="" min="2010-01">
 	    <select>
-		  <option value="recruiter1">Recruiter 1</option>
-		  <option value="recruiter2">Recruiter 2</option>
+        
+    <?php
+        $con=mysqli_connect("localhost","root","Welcome1","ariel");
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
+        
+        $result = mysqli_query($con,"SELECT * FROM ariel.wp_user");
+        
+        while ($row = mysqli_fetch_array($result)){
+            echo "<option>".$row['username']."</option>";
+        }
+        
+    ?>
+<!--
+		  <option>Recruiter 1</option>
+		  <option>Recruiter 2</option>
+-->
 		</select>
 	    <!-- <input type="submit" name="Submit" value="Submit" onclick="tableCreate()"> -->
         <button type="button" onClick="tableCreate()">Submit</button>
@@ -493,7 +511,6 @@
                         VALUES ('recruiter 1', '".$rca_string."');";
                         if($conn->query($sql_statement) == TRUE){
                             echo "NICE";
-
                         }
                         else{
                             echo "Error : " . $sql_statement. "<br>" . $conn->error;
@@ -952,16 +969,12 @@
                        	setCookie('goalCookie', getCookie('goal'+rcaIndex));
                        	console.log(getCookie('goalCookie'));
  					}
-
  					function table2(){
  						var columns = ["KPIs", "Number of Starts", "Sumbit to Start Ratio", "Submit to Interview Show Ratio", "Interview Show to Start Ratio", "Job Opening Ratio", "Number of Submits", "Submit Rate", "Number of Snapshots", "Conversion Rate", "Call Quality Score", "Number of Connects", "Connect Rate", "Dial Effort (LPR Rate)", "Number of Callable Leads", "No. of Contractors", "Remarks", "Data Options"];
-
 						var body = document.getElementById('editTable22');
 						var tbl = document.createElement('table');
 						var tbdy = document.createElement('tbody');
-
 						for (var i = 0; i < columns.length; i++) { //loop for row, loop kpi here
-
 							var tr = document.createElement('tr');
 							for (var j = 0; j < 3; j++) { //loop for column, loop dates here
 								if(j == 0){
@@ -1015,24 +1028,20 @@
 								          	}
 								          	tbdy.appendChild(tr);
 								        }
-
   						
 						tbl.appendChild(tbdy);
 						
 						body.appendChild(tbl);
  					}
-
  					function createBenchmarkTables(){
  						console.log("IN FUNCTION");
 						
 						table2();
 					}
-
 					function closeBenchmark(){
 				    	document.getElementById("benchmarkTable").deleteRow(1);
 				    	document.getElementById('myModal2').style.display='none';
 				    }
-
                     
                 
 				    	
