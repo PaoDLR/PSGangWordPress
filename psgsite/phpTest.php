@@ -397,7 +397,7 @@
 								    }
 								    table();
 				    			</script>
-				    			<button type='button' onclick='getGoalInput()'>Submit</button>
+				    			<button type='button' onclick="getGoalInput()">Submit</button>
 				    		</td>
 				    	</tr>
 				    </table>
@@ -847,6 +847,16 @@
                         
                         
                     }
+
+                    function eraseCookie(name) {
+                    	// document.cookie = name+ "=;expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/;";
+
+                    	var cookie = getCookie(name);
+
+                    	cookie.split(";").forEach(function(c) { cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });
+
+                    	
+                    }
                     
                     function deleteAllCookies() {
                         var r = confirm("Are you sure you wish to reset?");
@@ -862,43 +872,64 @@
 						//if does not exist create, else clear the old cookie then add again
 						var selected = document.getElementById('selectMonth').selectedIndex;
 						console.log(selected);
+						//eraseCookie('goal'+selected);
+						var cookieString = "";
 
-						for (var j=0;j<17;j++){
-							setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('goalValue' + (j+1)).innerHTML);
-							
+						setCookie('goal'+selected, "");
+
+						for (var i=0;i<17;i++){
+							cookieString+=document.getElementById('goalValue'+(i+1)).innerHTML + "||";
+							console.log(document.getElementById('goalValue'+(i+1)).innerHTML);
+
 						}
-						console.log(getCookie('goal'+selected));
+						console.log("Cookie String: " + cookieString);
 
+						setCookie('goal'+selected, cookieString);					
 
+							// for (var j=0;j<17;j++){
+							// 	setCookie('goal'+selected, getCookie('goal'+selected) + "||" + document.getElementById('goalValue' + (j+1)).innerHTML);
+								
+							// }
+							console.log(getCookie('goal'+selected));
 
 					}
 
                     function generateRCACookie(){
- 						var j = rcaIndex;
+ 						// var j = rcaIndex;
 
- 						var cookieVal = getCookie('column'+j);
- 						var cookieArr = cookieVal.split("||");
+ 						// var cookieVal = getCookie('column'+j);
+ 						// var cookieArr = cookieVal.split("||");
 
- 						var goalArray = getCookie('goal'+j).split("||");
+ 						// var goalArray = getCookie('goal'+j).split("||");
 
- 						var newCookie = "";
- 						var divide;
+ 						// var newCookie = "";
 
- 						var a = 1;
- 						var b = 1;
+ 						// var divide;
 
- 						for (var i=0;i<17;i++){
- 							if(cookieArr[i] != "0" && goalArray[i] != "0"){
- 								a = parseFloat(cookieArr[i]);
- 								b = parseFloat(goalArray[i]);
- 								divide = a/b;
- 								newCookie += divide + "||";
- 							}
+ 						// var a = 1;
+ 						// var b = 1;
 
- 						}
+ 						// for (var i=0;i<17;i++){
+ 						// 	if(cookieArr[i] != "0" && goalArray[i] != "0"){
+ 						// 		console.log(cookieArr[i])
+ 						// 		console.log(goalArray[i])
+ 						// 		a = parseFloat(cookieArr[i]);
+ 						// 		b = parseFloat(goalArray[i]);
+ 						// 		divide = a/b;
+ 						// 		newCookie += divide + "||";
+ 						// 	}
 
-                        setCookie('RCACookie',newCookie);
+ 						// }
+
+       //                  setCookie('RCACookie',newCookie);
                        	//console.log(getCookie('RCACookie'));
+
+
+                       	console.log(rcaIndex);
+                       	console.log(getCookie('column'+rcaIndex));
+                       	setCookie('RCACookie', getCookie('column'+rcaIndex));
+                       	setCookie('goalCookie', getCookie('goal'+rcaIndex));
+
  					}
 
 
