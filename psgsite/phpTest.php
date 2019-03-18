@@ -109,6 +109,20 @@
 		    height: 50px;
 		}   
 		    
+        button {
+          background-color: #ffae3d;
+          border: groove black;
+          border-radius: 8px;
+          color: black;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 14px;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
+        
 	</style>
     
 <!-- QUARTERS
