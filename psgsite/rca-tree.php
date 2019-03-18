@@ -39,7 +39,7 @@
         
           //function to initialize the button colors based on the data from the heat map
           function initBtnColor(){
-              var goalData = getCookie('goal0').split('||');
+              var goalData = getCookie('goalCookie').split('||');
               var actualData = getCookie('RCACookie').split('||');
               
               //value of starts
